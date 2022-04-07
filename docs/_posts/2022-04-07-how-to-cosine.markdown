@@ -5,23 +5,23 @@ title:  "How (not) to cosine. Part 1"
 
 ## To cosine or not to cosine
 
-There was a recent reddit post about implementing `cos(x)` from scratch in C.
-<https://www.reddit.com/r/programming/comments/tr8zrq/implementing_cosine_in_c_from_scratch/>
+There was a recent reddit post about implementing `cos(x)` [from scratch in C](https://www.reddit.com/r/programming/comments/tr8zrq/implementing_cosine_in_c_from_scratch/).
 
 In which the author explored two different approaches to implementing (an approximate) cosine function,
 which can serve as a great example to show why "textbook math"[^textbookmath] approaches to numerical algorithms can often fall short (or alternatively: why the whole field of numerics exists).
 
 This post is not intended to poke fun at the author, but rather to show some numerical techniques that are usually not taught in normal algebra or calculus classes.
+Note that having a basic understanding of calculus is all that's required to follow this post, you're not expected to have studied any numerics related topics before.
 
 ### Why Mr. Taylor isn't your friend
 
-When faced with the problem of implementing a function to calculate `cos(x)` a natural idea might be to use a truncated Taylor series[^taylor].
+When faced with the problem of implementing a function to calculate `cos(x)` a natural idea might be to use a truncated [Taylor series](https://en.wikipedia.org/wiki/Taylor_series).
 
 In fact the Taylor series for `cos(x)` follows a rather nice pattern:
 
 `cos(x) = 1 - x^2/2! + x^4/4! - x^6/6! + ...`
 
-And while Taylor series are a great tool for ~~making students lose their will to live~~ proofs in calculus classes,
+And while Taylor series are a great tool for proofs in calculus classes,
 using a truncated Taylor series to approximate an analytic function will rarely yield great results.
 
 To understand why, we have to take a closer look at how polynomial approximations work.
@@ -135,7 +135,6 @@ whereas the maximum error of the Taylor polynomial sits firmly at `8.9*10^-4`
 
 ---
 [^textbookmath]: "textbook" here refers to typical calculus textbooks. Numerics textbooks obviously do exist and teach the proper techniques, but they often aren't part of a typical university math course.
-[^taylor]: [Taylor series on wikipedia](https://en.wikipedia.org/wiki/Taylor_series)
 [^actual_function_design]: In real world applications this is often done the other way around: we decide on a maximum error bound and then find the lowest order polynomial that achieves said goal.
 [^cheby_nodes]: [Chebyshev Nodes on wikipedia](https://en.wikipedia.org/wiki/Chebyshev_nodes)
 
