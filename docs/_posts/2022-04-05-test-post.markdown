@@ -2,26 +2,5 @@
 layout: post
 title:  "Test Post"
 ---
-Test code:
 
-{% highlight cpp %}
-int foo(int x){
-    return 2 * x;
-}
-{% endhighlight %}
-
-Test asm:
-
-{% highlight nasm %}
-foo:
-        lea     eax, [rdi+rdi]
-        ret
-{% endhighlight %}
-
-Test markdown highlight:
-
-```nasm
-foo:
-        lea     eax, [rdi+rdi]
-        ret
-```
+Test Post
