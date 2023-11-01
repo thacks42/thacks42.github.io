@@ -80,7 +80,7 @@ void bf_interpreter(const std::string& bf_code){
     
     std::stack<size_t> open_braces;
     
-    for(size_t i = 0; i < bf_code.size();;){
+    for(size_t i = 0; i < bf_code.size(); i++;){
         switch(bf_code[i]){
             case '+':
                 *ptr++;
@@ -94,10 +94,25 @@ void bf_interpreter(const std::string& bf_code){
             case '<':
                 ptr--;
                 break;
-            case '[': //todo: fix
+            case '[':
+                if(*ptr == 0){
+                    while(bf_code[i] != ']'){
+                        i++;
+                    }
+                }
+                else{
+                    open_braces.push(i); //push location of the open brace to the stack
+                }
+                break;
+            case ']':
                 if(*ptr != 0){
-                open_braces.push(i); //push location of the open brace to the stack
-                
+                    i = open_braces.top();
+                    open_braces.pop();
+                }
+                else{
+                    open_braces.pop();
+                }
+                break;
             case ',':
                 *ptr = getchar();
                 break;
