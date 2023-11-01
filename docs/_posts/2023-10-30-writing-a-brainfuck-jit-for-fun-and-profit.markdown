@@ -177,5 +177,4 @@ The calls to putchar and getchar also need a relative address. Once we take care
 
 
 [^1]: the actual size of the array varies from implementation to implementation with 30000 cells being the value given in the language specification. Variations also include changing the sizes of the cells to more than 8 bits.
-[^2]: one important thing to be aware of here is that programs usually spend most of their time in loops, and while an interpreter has to do all of its work for each iteration of the loop,
-a compiler only has to parse the loop once, and emit assembly instructions for it, and never deal with it again.
+[^2]: one important thing to be aware of here is that programs usually spend most of their time in loops, and while an interpreter has to do all of its work for each iteration of the loop, a compiler only has to parse the loop once, and emit assembly instructions for it, and never deal with it again.
