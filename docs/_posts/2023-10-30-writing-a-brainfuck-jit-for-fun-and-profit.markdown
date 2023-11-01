@@ -107,7 +107,6 @@ void bf_interpreter(const std::string& bf_code){
             case ']':
                 if(*ptr != 0){
                     i = open_braces.top();
-                    open_braces.pop();
                 }
                 else{
                     open_braces.pop();
