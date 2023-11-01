@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Writing a Brainfuck JIT (kinda) for fun and profit (not really). Part 1"
+title:  "Writing a Brainfuck JIT for fun and profit. Part 1"
 ---
 
 ## Did you know that X is Turing complete???
