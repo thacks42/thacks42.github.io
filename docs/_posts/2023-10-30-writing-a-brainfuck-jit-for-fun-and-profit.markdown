@@ -19,7 +19,7 @@ on parties, or allow them to give "interesting" talks at IT conferences.
 ## Inventing languages no one needs
 
 And this is usually also the mental framework from which to view minimally turing complete languages like Brainfuck: Their main contribution to society is memes
-(hey, you should rewrite your ray-tracer in brainfuck), pedantry (technically, you *could* rewrite your ray-tracer in brainfuck) or weird hobby projects for people with questionable hobbies (such as this one).
+("hey, you should rewrite your ray-tracer in brainfuck"), pedantry ("technically, you *could* rewrite your ray-tracer in brainfuck") or weird hobby projects for people with questionable hobbies (such as this one).
 The language itself is easy enough to explain. It consists of exactly eight symbols: `+` `-` `<` `>` `[` `]` `,` `.` and the environment that runs the code consist of a large array of byte sized[^1] "cells",
 and a pointer that points to the "current" cell. The eight symbols then have the following behavior assigned to them:
 ```
