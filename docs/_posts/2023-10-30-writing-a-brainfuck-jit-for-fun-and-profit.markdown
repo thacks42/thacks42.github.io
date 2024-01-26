@@ -112,7 +112,7 @@ void bf_interpreter(const std::string& bf_code){
 ## Why not write a compiler... in assembly?!
 
 In fact doing this is simple enough that it can reasonably written in even less pleasant languages, which is also where the initial inspiration for this project came from:
-I was asked for some input on how to make a brainfuck interpreter written in x86_64 assembly run faster (apparently that's what they teach kinds in school these days, I'm jealous).
+I was asked for some input on how to make a brainfuck interpreter written in x86_64 assembly run faster (apparently that's what they teach kids in school these days, I'm jealous).
 Given that they were already writing assembly code, I suggested a (maybe just-in-time) compiler as opposed to an interpreter.
 The idea being that you first iterate over the whole bf source code once and for each symbol you generate a small number of assembly instructions, usually no more than one or two, 
 and once you're finished you jump to the first instruction emitted and execute them as a "normal" program. This eliminates the overhead of running the interpreter loop, 
