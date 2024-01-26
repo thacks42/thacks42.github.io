@@ -5,6 +5,12 @@ title:  "Writing a Brainfuck JIT for fun and profit. Part 1"
 
 ## Did you know that X is Turing complete???
 
+When first learning about programming languages one thing that comes up a lot is complexity: No matter if you learn python or C++, there are so many details to discover,
+so many different ways in which a goal can be accomplished, so many rules and exceptions to them, but also a huge amount of potential to solve whichever problem you might stumble across.
+After you spend some time programming, there comes a point at which you might look at a problem and realize "I know how to solve this with a program",
+which invites us to ask a deceptively subtle question: "Are all programming languages created equal in their abilities to solve problems?"
+Or in other words: are there a certain classes of problems which some languages can solve and others can't? And if such classes exist, is there a "superclass" which encompasses all of them?
+As it turns out, there is! We call the ability of formal systems (such as programming languages) to solve all programmatically solvable problems "Turing completeness".
 Turing completeness is something people tend to find in the [weirdest places](https://en.wikipedia.org/wiki/Turing_completeness#Unintentional_Turing_completeness), which is not too surprising
 once you consider how few requirements a system has to fulfill to get there. While the [formal definitions](https://en.wikipedia.org/wiki/Turing_completeness#Formal_definitions) can be somewhat laborious,
 an informal definition, such as "a turing complete system can compute anything any other computing system can compute (given enough time)" is usually sufficient.
@@ -20,6 +26,7 @@ on parties, or allow them to give "interesting" talks at IT conferences.
 
 And this is usually also the mental framework from which to view minimally turing complete languages like Brainfuck: Their main contribution to society is memes
 ("hey, you should rewrite your ray-tracer in brainfuck"), pedantry ("technically, you *could* rewrite your ray-tracer in brainfuck") or weird hobby projects for people with questionable hobbies (such as this one).
+However it can also be an interesting example to show just how seemingly limited a system might appear and still be fully Turing complete.
 The language itself is easy enough to explain. It consists of exactly eight symbols: `+` `-` `<` `>` `[` `]` `,` `.` and the environment that runs the code consist of a large array of byte sized[^1] "cells",
 and a pointer that points to the "current" cell. The eight symbols then have the following behavior assigned to them:
 ```
@@ -94,30 +101,7 @@ void bf_interpreter(const std::string& bf_code){
             case '<':
                 ptr--;
                 break;
-            case '[':
-                if(*ptr == 0){
-                    while(bf_code[i] != ']'){
-                        i++;
-                    }
-                }
-                else{
-                    open_braces.push(i); //push location of the open brace to the stack
-                }
-                break;
-            case ']':
-                if(*ptr != 0){
-                    i = open_braces.top();
-                }
-                else{
-                    open_braces.pop();
-                }
-                break;
-            case ',':
-                *ptr = getchar();
-                break;
-            case '.':
-                putchar(*ptr);
-                break;
+            ...
         }
     }
 }
