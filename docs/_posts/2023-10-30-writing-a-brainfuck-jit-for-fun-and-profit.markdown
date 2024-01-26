@@ -7,10 +7,12 @@ title:  "Writing a Brainfuck JIT for fun and profit. Part 1"
 
 When first learning about programming languages one thing that comes up a lot is complexity: No matter if you learn python or C++, there are so many details to discover,
 so many different ways in which a goal can be accomplished, so many rules and exceptions to them, but also a huge amount of potential to solve whichever problem you might stumble across.
+
 After you spend some time programming, there comes a point at which you might look at a problem and realize "I know how to solve this with a program",
 which invites us to ask a deceptively subtle question: "Are all programming languages created equal in their abilities to solve problems?"
 Or in other words: are there a certain classes of problems which some languages can solve and others can't? And if such classes exist, is there a "superclass" which encompasses all of them?
 As it turns out, there is! We call the ability of formal systems (such as programming languages) to solve all programmatically solvable problems "Turing completeness".
+
 Turing completeness is something people tend to find in the [weirdest places](https://en.wikipedia.org/wiki/Turing_completeness#Unintentional_Turing_completeness), which is not too surprising
 once you consider how few requirements a system has to fulfill to get there. While the [formal definitions](https://en.wikipedia.org/wiki/Turing_completeness#Formal_definitions) can be somewhat laborious,
 an informal definition, such as "a turing complete system can compute anything any other computing system can compute (given enough time)" is usually sufficient.
