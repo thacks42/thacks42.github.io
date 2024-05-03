@@ -27,6 +27,7 @@ twitter_username: trollhacks1
 github_username: thacks42
 
 # Build settings
+future: true
 theme: minima
 plugins:
   - jekyll-feed
